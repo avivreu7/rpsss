@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק אבן נייר ומספריים</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>הגרלת אבן נייר ומספריים</h1>
+            <p>הכרעה אקראית והוגנת בין שני צדדים</p>
+        </header>
+        
+        <main>
+            <!-- Setup Screen -->
+            <div id="setup-screen">
+                <h2 class="section-title">הכנסת שמות הצדדים</h2>
+                
+                <div class="mode-selector">
+                    <h3 class="mode-title">בחר מצב משחק:</h3>
+                    <div class="mode-buttons">
+                        <button class="mode-button selected" data-mode="single">משחק בודד</button>
+                        <button class="mode-button" data-mode="bestOf3">הטוב מ-3</button>
+                        <button class="mode-button" data-mode="bestOf5">הטוב מ-5</button>
+                    </div>
+                </div>
+                
+                <div class="players-setup">
+                    <div class="player-card">
+                        <h3>צד 1</h3>
+                        <input type="text" id="player1-name" class="player-input" placeholder="הכנס שם">
+                    </div>
+                    
+                    <div class="player-card">
+                        <h3>צד 2</h3>
+                        <input type="text" id="player2-name" class="player-input" placeholder="הכנס שם">
+                    </div>
+                </div>
+                
+                <button id="start-game" class="start-button">התחל הגרלה</button>
+            </div>
+            
+            <!-- Game Screen -->
+            <div id="game-screen">
+                <div id="round-display" class="score-display hidden">
+                    <div class="round-info">
+                        סיבוב <span id="current-round">1</span> מתוך <span id="max-rounds">3</span> 
+                        | <span id="score-player1">0</span> - <span id="score-player2">0</span>
+                    </div>
+                    <div class="score-pills" id="score-pills"></div>
+                </div>
+                
+                <div id="countdown" class="countdown hidden">3</div>
+                
+                <div class="players-area">
+                    <div class="player-side">
+                        <h3 id="player1-display" class="player-name">צד 1</h3>
+                        <div id="player1-choice" class="choice-circle">?</div>
+                    </div>
+                    
+                    <div id="vs-display" class="vs-display">VS</div>
+                    
+                    <div class="player-side">
+                        <h3 id="player2-display" class="player-name">צד 2</h3>
+                        <div id="player2-choice" class="choice-circle">?</div>
+                    </div>
+                </div>
+                
+                <div id="result-box" class="result-box hidden">
+                    <p id="result-text"></p>
+                </div>
+                
+                <div id="winner-announcement" class="winner-announcement hidden"></div>
+                
+                <div class="controls">
+                    <button id="next-round" class="next-round-button hidden">לסיבוב הבא</button>
+                    <button id="play-again" class="play-again-button hidden">שחק שוב</button>
+                    <button id="reset-game" class="reset-button hidden">משחק חדש</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
